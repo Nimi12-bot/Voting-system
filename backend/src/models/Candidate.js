@@ -1,0 +1,22 @@
+import mongoose from "mongoose";
+
+const candidateSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  party: {
+    type: String
+  },
+  electionId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Election",
+    required: true
+  },
+  votes: {
+    type: Number,
+    default: 0
+  }
+}, { timestamps: true });
+
+export default mongoose.model("Candidate", candidateSchema);

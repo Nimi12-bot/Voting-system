@@ -34,10 +34,10 @@ export const castVote = async (req, res) => {
       message: "Vote submitted successfully"
     });
     } catch (error) {
-    console.error("VOTE ERROR:", error); // This prints the real error in your VS Code terminal
+    console.error("VOTE ERROR:", error); 
     res.status(500).json({ 
         message: "Server error", 
-        errorDetails: error.message // This sends the real error back to Postman
+        errorDetails: error.message 
     });
 }
 
